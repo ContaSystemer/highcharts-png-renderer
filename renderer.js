@@ -5,9 +5,11 @@
 (function() {
     'use strict';
 
-    var webpage  = require('webpage'),
-        base64   = require('./libs/base64.js'),
-        Renderer = function(options) { this.init(options); };
+    var webpage = require('webpage');
+
+    function Renderer(options) {
+        this.init(options);
+    };
 
     Renderer.prototype.init = function(options) {
         this.options = options;
@@ -19,6 +21,7 @@
         this.setOnRenderCallback(function() {});
 
         this.page.onCallback = this.onPhantomCallback.bind(this);
+
         this.page.onConsoleMessage = function(msg, lineNum, sourceId) {
             console.log('CONSOLE: ' + (typeof msg == 'string' ? msg : JSON.stringify(msg)));
         };
@@ -45,18 +48,7 @@
     };
 
     Renderer.prototype.onRenderComplete = function() {
-        var data    = base64.decode(this.page.renderBase64('png')),
-            decoded = '',
-            j       = data.length;
-
-        for (var i = 0; i < j; i++) {
-            decoded = decoded + String.fromCharCode(data[i]);
-        }
-
-        this.onRenderCompleteCallback(
-            this.response,
-            decoded
-        );
+        this.onRenderCompleteCallback(this.response, atob(this.page.renderBase64('png'));
 
         this.page.close();
     };
@@ -74,10 +66,10 @@
     };
 
     Renderer.prototype.onPageReady = function() {
-        this.page.injectJs(this.config.scripts.jquery);
-        this.page.injectJs(this.config.scripts.highcharts);
-        this.page.injectJs(this.config.scripts['highcharts-more']);
-        this.page.injectJs('libs/bind-shim.js');
+        this.config.scripts.forEach(function(script) {
+            this.page.injectJs(script);
+        }, this);
+
         this.page.injectJs('charter.js');
 
         this.page.zoomFactor = this.config.scale || 1;

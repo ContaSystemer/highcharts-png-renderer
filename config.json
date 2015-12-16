@@ -1,10 +1,12 @@
 {
     "port": 11942,
-    "scripts": {
-        "jquery"         : "libs/jquery.min.js",
-        "highcharts"     : "libs/highcharts.js",
-        "highcharts-more": "libs/highcharts-more.js"
-    },
+    "scripts": [
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/highcharts/lib/highcharts.js",
+        "node_modules/highcharts/lib/highcharts-more.js",
+        "node_modules/highcharts/lib/modules/solid-gauge.js",
+        "node_modules/phantomjs-polyfill/bind-polyfill.js"
+    ],
     "scale": 1,
     "allowUnsafeEvaluation": false
 }

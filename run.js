@@ -6,7 +6,7 @@
     'use strict';
 
     // Make sure we have Function.bind
-    require('./libs/bind-shim');
+    require('phantomjs-polyfill');
 
     var RenderServer = require('./render-server'),
         config       = require('./config.json'),

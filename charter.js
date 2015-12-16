@@ -5,7 +5,9 @@
 (function($, window) {
     'use strict';
 
-    var Charter = function() { this.init(); };
+    function Charter() {
+        this.init();
+    };
 
     $.extend(Charter.prototype, {
         init: function() {

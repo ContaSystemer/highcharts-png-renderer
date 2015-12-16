@@ -21,5 +21,12 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vgnett/highcharts-png-renderer/issues"
+  },
+  "dependencies": {
+    "highcharts": "^4.2.0",
+    "jquery": "^2.1.4",
+    "phantom": "^0.8.4",
+    "phantomjs": "^1.9.19",
+    "phantomjs-polyfill": "0.0.1"
   }
 }

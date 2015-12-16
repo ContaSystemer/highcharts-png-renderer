@@ -8,8 +8,11 @@
     // Init variables
     var webserver    = require('webserver'),
         usage        = 'Please POST to / the JSON-config for the chart you want to render',
-        Renderer     = require('./renderer.js'),
-        RenderServer = function(config) { this.init(config); };
+        Renderer     = require('./renderer.js');
+
+    function RenderServer(config) {
+        this.init(config);
+    };
 
     RenderServer.prototype.init = function(config) {
         this.config = config;
