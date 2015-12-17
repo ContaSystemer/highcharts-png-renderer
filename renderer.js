@@ -48,7 +48,9 @@
     };
 
     Renderer.prototype.onRenderComplete = function() {
-        this.onRenderCompleteCallback(this.response, atob(this.page.renderBase64('png'));
+        var data = window.atob(this.page.renderBase64('png'));
+
+        this.onRenderCompleteCallback(this.response, data);
 
         this.page.close();
     };
