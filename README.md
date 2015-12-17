@@ -7,7 +7,7 @@ Renders charts based on Highcharts through Phantom.js as PNG files
 
 * Edit config.json to match your preferences
 * Run `npm install`
-* Run `phantomjs run.js`
+* Run `npm run start`
 * Perform POST-requests against / where the body of the request is the
   JSON-options you would normally pass to the Highcharts constructor
 
