@@ -2,9 +2,9 @@
     "port": 11942,
     "scripts": [
         "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/highcharts/lib/highcharts.js",
-        "node_modules/highcharts/lib/highcharts-more.js",
-        "node_modules/highcharts/lib/modules/solid-gauge.js",
+        "node_modules/highcharts/highcharts.js",
+        "node_modules/highcharts/highcharts-more.js",
+        "node_modules/highcharts/modules/solid-gauge.js",
         "node_modules/phantomjs-polyfill/bind-polyfill.js"
     ],
     "scale": 1,
