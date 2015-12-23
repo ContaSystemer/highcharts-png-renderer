@@ -18,6 +18,14 @@
 
             // Disable animations
             Highcharts.SVGRenderer.prototype.Element.prototype.animate = Highcharts.SVGRenderer.prototype.Element.prototype.attr;
+
+            Highcharts.setOptions({
+                plotOptions: {
+                    series: {
+                        animation: false
+                    }
+                }
+            });
         },
 
         setId: function(id) {
