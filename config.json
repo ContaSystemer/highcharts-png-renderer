@@ -7,6 +7,6 @@
         "node_modules/highcharts/modules/solid-gauge.js",
         "node_modules/phantomjs-polyfill/bind-polyfill.js"
     ],
-    "scale": 1,
+    "scale": 2,
     "allowUnsafeEvaluation": false
 }
