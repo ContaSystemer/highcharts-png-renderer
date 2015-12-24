@@ -74,7 +74,7 @@
 
         this.page.injectJs('charter.js');
 
-        this.page.zoomFactor = this.options.scale || 1;
+        this.page.zoomFactor = this.options.exporting.scale || 1;
 
         var createChart = function(options, allowUnsafe, id, cb) {
             if (allowUnsafe && typeof options === 'string') {
