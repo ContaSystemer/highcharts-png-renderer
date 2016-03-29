@@ -87,7 +87,9 @@
             }
         }, this);
 
-        this.page.zoomFactor = this.options.exporting.scale || 1;
+        this.page.zoomFactor = this.options.exporting && this.options.exporting.scale > 0 ?
+                this.options.exporting.scale :
+                this.config.scale;
 
         var createChart = function(options, allowUnsafe, id, cb) {
             if (allowUnsafe && typeof options === 'string') {
