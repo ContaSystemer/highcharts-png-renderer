@@ -25,6 +25,19 @@
         this.page.onConsoleMessage = function(msg, lineNum, sourceId) {
             console.log('CONSOLE: ' + (typeof msg == 'string' ? msg : JSON.stringify(msg)));
         };
+
+        this.page.onError = function(msg, trace) {
+            var msgStack = ['ERROR: ' + msg];
+
+            if (trace && trace.length) {
+                msgStack.push('TRACE:');
+                trace.forEach(function(t) {
+                    msgStack.push(' -> ' + t.file + ': ' + t.line + (t.function ? ' (in function "' + t.function +'")' : ''));
+                });
+            }
+
+            console.error(msgStack.join('\n'));
+        };
     };
 
     Renderer.prototype.setConfig = function(config) {
