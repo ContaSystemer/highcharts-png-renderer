@@ -5,9 +5,6 @@
 (function() {
     'use strict';
 
-    // Make sure we have Function.bind
-    require('phantomjs-polyfill');
-
     var RenderServer = require('./render-server'),
         config       = require('./config.json'),
         server       = new RenderServer(config);

@@ -71,6 +71,7 @@
 
         render: function() {
             var context = this, svg;
+
             this.chart = new Highcharts[this.constr](this.options, function() {
                 // Remove stroke-opacity paths, used by mouse-trackers,
                 // they turn up as as fully opaque in the PDF/PNG
