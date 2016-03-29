@@ -4,7 +4,8 @@
         "node_modules/jquery/dist/jquery.min.js",
         "node_modules/highcharts/highcharts.js",
         "node_modules/highcharts/highcharts-more.js",
-        "node_modules/highcharts/modules/solid-gauge.js"
+        "node_modules/highcharts/modules/solid-gauge.js",
+        "charter.js"
     ],
     "scale": 2,
     "allowUnsafeEvaluation": false

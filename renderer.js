@@ -69,10 +69,10 @@
 
     Renderer.prototype.onPageReady = function() {
         this.config.scripts.forEach(function(script) {
-            this.page.injectJs(script);
+            if (this.page.injectJs(script) !== true) {
+                console.error(script  + ' was not injected');
+            }
         }, this);
-
-        this.page.injectJs('charter.js');
 
         this.page.zoomFactor = this.options.exporting.scale || 1;
 
