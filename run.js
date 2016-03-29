@@ -14,5 +14,4 @@
     if (config.allowUnsafeEvaluation) {
         console.log('WARNING: Unsafe evaluation is turned ON!');
     }
-
 })();

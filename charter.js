@@ -76,6 +76,7 @@
                 // Remove stroke-opacity paths, used by mouse-trackers,
                 // they turn up as as fully opaque in the PDF/PNG
                 var node, opacity;
+
                 $('*[stroke-opacity]').each(function() {
                     node = $(this);
                     opacity = node.attr('stroke-opacity');

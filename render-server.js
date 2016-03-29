@@ -12,7 +12,7 @@
 
     function RenderServer(config) {
         this.init(config);
-    };
+    }
 
     RenderServer.prototype.init = function(config) {
         this.config = config;
@@ -39,6 +39,7 @@
 
     RenderServer.prototype.onPostRequest = function(request, response) {
         var data;
+
         try {
             // Try to evaluate options as JSON
             data = JSON.parse(request.post);
@@ -50,6 +51,7 @@
         }
 
         var renderer = new Renderer(data || request.post);
+
         renderer.allowUnsafeEvaluation(this.config.allowUnsafeEvaluation);
         renderer.setResponse(response);
         renderer.setOnRenderCallback(this.onRenderComplete.bind(this));
@@ -77,10 +79,8 @@
 
     RenderServer.prototype.startServer = function() {
         this.server  = webserver.create();
-        this.service = this.server.listen(
-            this.config.port,
-            this.onRequest.bind(this)
-        );
+
+        this.service = this.server.listen(this.config.port, this.onRequest.bind(this));
     };
 
     module.exports = RenderServer;

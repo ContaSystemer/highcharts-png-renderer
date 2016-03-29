@@ -9,7 +9,7 @@
 
     function Renderer(options) {
         this.init(options);
-    };
+    }
 
     Renderer.prototype.init = function(options) {
         this.options = options;
@@ -87,18 +87,14 @@
             }
 
             var charter = new Charter();
+
             charter.setId(id);
             charter.setOptions(options);
 
             var info = charter.render();
         };
 
-        this.page.evaluate(
-            createChart,
-            this.options,
-            this.allowUnsafeEvaluation,
-            this.id
-        );
+        this.page.evaluate(createChart, this.options, this.allowUnsafeEvaluation, this.id);
     };
 
     Renderer.prototype.render = function() {
@@ -106,5 +102,4 @@
     };
 
     module.exports = Renderer;
-
 })();
